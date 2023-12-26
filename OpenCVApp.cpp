@@ -7,9 +7,10 @@
 
 using namespace cv;
 
-int main()
-{
-
+/**
+ * @brief 
+*/
+void EDLinesTest() {
 	Mat testImg = imread("F://lane2.png", 0);
 	ED testED = ED(testImg, SOBEL_OPERATOR, 36, 8, 1, 10, 1.0, true); // apply ED algorithm
 
@@ -44,6 +45,11 @@ int main()
 	std::vector<LS> lines = testEDLines.getLines();
 	int noLines = testEDLines.getLinesNo();
 	std::cout << "Number of line segments: " << noLines << std::endl;
+}
+
+int main()
+{
+	EDLinesTest();
 	waitKey();
     return 0;
 }
