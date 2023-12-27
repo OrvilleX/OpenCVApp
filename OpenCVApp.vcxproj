@@ -139,6 +139,7 @@
     <ClCompile Include="EDColor.cpp" />
     <ClCompile Include="EDLines.cpp" />
     <ClCompile Include="EDPF.cpp" />
+    <ClCompile Include="LSWMS.cpp" />
     <ClCompile Include="NFA.cpp" />
     <ClCompile Include="OpenCVApp.cpp" />
   </ItemGroup>
@@ -152,6 +153,7 @@
     <ClInclude Include="EDLib.h" />
     <ClInclude Include="EDLines.h" />
     <ClInclude Include="EDPF.h" />
+    <ClInclude Include="LSWMS.h" />
     <ClInclude Include="NFA.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

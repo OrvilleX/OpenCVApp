@@ -4,6 +4,7 @@
 #include <iostream>
 #include <opencv2/opencv.hpp>
 #include "EDLib.h"
+#include "LSWMS.h"
 
 using namespace cv;
 
@@ -47,9 +48,20 @@ void EDLinesTest() {
 	std::cout << "Number of line segments: " << noLines << std::endl;
 }
 
+void LSWMSTest() {
+	Mat inputImg = imread("F://lane2.png", 0);
+	std::vector<LSWMS::LSEG> lSegs;
+	std::vector<double> errors;
+	LSWMS lswms(cv::Size(inputImg.cols, inputImg.rows), 3, 0, false, false);
+	lswms.run(inputImg, lSegs, errors);
+	lswms.drawLSegs(inputImg, lSegs, errors);
+	imshow("LSWMS", inputImg);
+}
+
 int main()
 {
-	EDLinesTest();
+	// EDLinesTest();
+	LSWMSTest();
 	waitKey();
     return 0;
 }
